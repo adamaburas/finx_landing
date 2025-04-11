@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinX - Investment Marketplace for High Earners</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-teal-900 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="logo-container">
+                    <span class="text-3xl font-bold">Fin<span class="text-gold">X</span></span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-gold transition duration-300">Features</a>
+                <a href="#how-it-works" class="hover:text-gold transition duration-300">How It Works</a>
+                <a href="#about" class="hover:text-gold transition duration-300">About</a>
+                <a href="#waitlist" class="hover:text-gold transition duration-300">Join Waitlist</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none" aria-expanded="false">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-teal-800 pb-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="#features" class="block py-2 hover:text-gold transition duration-300">Features</a>
+                <a href="#how-it-works" class="block py-2 hover:text-gold transition duration-300">How It Works</a>
+                <a href="#about" class="block py-2 hover:text-gold transition duration-300">About</a>
+                <a href="#waitlist" class="block py-2 hover:text-gold transition duration-300">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-teal-900 text-white pt-32 pb-20 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-teal-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-10 left-1/3 w-80 h-80 bg-teal-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Invest Smarter, <span class="text-gold">Grow Faster</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-xl">Like a robo-advisor, but elevated—with access to private markets and more.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#waitlist" class="bg-gold hover:bg-yellow-500 text-teal-900 font-bold py-3 px-8 rounded-lg transition duration-300 text-center shadow-lg transform hover:-translate-y-1">Join Waitlist</a>
+                    <a href="#how-it-works" class="bg-transparent hover:bg-teal-800 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-center">How It Works</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Investment Dashboard" class="rounded-lg shadow-2xl w-full transform -rotate-2 hover:rotate-0 transition duration-500">
+                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-gray-500 text-sm">Portfolio Growth</p>
+                            <p class="text-gray-800 font-bold text-xl">+24.8%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-mint-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose <span class="text-gold">FinX</span>?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our platform offers unique advantages for high earners looking to optimize their investment strategy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-md transform transition duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-teal-700 mb-4">
+                        <i class="fas fa-chart-line text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Personalized Portfolio</h3>
+                    <p class="text-gray-600">Get tailored investment recommendations based on your financial goals, risk tolerance, and time horizon.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md transform transition duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-teal-700 mb-4">
+                        <i class="fas fa-lock text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Exclusive Opportunities</h3>
+                    <p class="text-gray-600">Access private equity, venture capital, and alternative investments typically reserved for institutional investors.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md transform transition duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-teal-700 mb-4">
+                        <i class="fas fa-graduation-cap text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Expert Guidance</h3>
+                    <p class="text-gray-600">Learn from comprehensive educational resources and insights from top financial experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How <span class="text-gold">FinX</span> Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our streamlined process makes investing simple, transparent, and effective.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-teal-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-2">Create Profile</h3>
+                    <p class="text-gray-600">Complete your investor profile with your financial goals and preferences.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-teal-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-2">Get Matched</h3>
+                    <p class="text-gray-600">Our algorithm matches you with optimal investment opportunities.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-teal-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-2">Invest</h3>
+                    <p class="text-gray-600">Review recommendations and invest with confidence.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-teal-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-2">Track & Optimize</h3>
+                    <p class="text-gray-600">Monitor performance and adjust your portfolio as needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-mint-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-gold">FinX</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">FinX is your modern investment dashboard — offering access to private markets and smart allocations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-4 text-teal-700">Our Mission</h3>
+                    <p class="text-gray-600 mb-6">We're building a platform that democratizes access to premium investment opportunities previously available only to the ultra-wealthy and institutional investors.</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-teal-700">Our Approach</h3>
+                    <p class="text-gray-600">By combining sophisticated technology with financial expertise, we create personalized investment strategies that help you grow your wealth more effectively than traditional investment methods.</p>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Modern office space" class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-teal-700 p-6 rounded-lg shadow-lg">
+                        <p class="text-white font-bold text-xl">Early access opening soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Waitlist Section -->
+    <section id="waitlist" class="py-20 bg-teal-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Be Among the First to Experience <span class="text-gold">FinX</span></h2>
+                <p class="text-xl mb-8">Join our exclusive waitlist today and get early access to our platform, plus special perks for founding members.</p>
+                
+                <form id="waitlist-form" class="max-w-md mx-auto">
+                    <div class="mb-4">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-gray-800">
+                    </div>
+                    <div class="mb-6">
+                        <select id="investor-type" name="investor-type" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-gray-800">
+                            <option value="" disabled selected>Select Investor Type</option>
+                            <option value="individual">Individual Investor</option>
+                            <option value="professional">Financial Professional</option>
+                            <option value="institutional">Institutional Investor</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="waitlist-submit" class="w-full bg-gold hover:bg-yellow-500 text-teal-900 font-bold py-3 px-8 rounded-lg transition duration-300 text-center shadow-lg transform hover:-translate-y-1">
+                        Join Waitlist
+                    </button>
+                </form>
+                
+                <div id="waitlist-success" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg">
+                    <p class="font-bold">Thank you for joining our waitlist!</p>
+                    <p>We'll notify you as soon as early access is available.</p>
+                </div>
+                
+                <p class="mt-6 text-sm text-teal-300">By joining, you agree to receive updates about FinX. We respect your privacy and will never share your information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Us</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Follow us on social media for the latest updates and investment insights.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="https://instagram.com/join_finx" target="_blank" class="text-teal-700 hover:text-gold transition duration-300">
+                    <i class="fab fa-instagram text-4xl"></i>
+                </a>
+                <a href="https://linkedin.com/company/finx" target="_blank" class="text-teal-700 hover:text-gold transition duration-300">
+                    <i class="fab fa-linkedin text-4xl"></i>
+                </a>
+                <a href="https://twitter.com/join_finx" target="_blank" class="text-teal-700 hover:text-gold transition duration-300">
+                    <i class="fab fa-twitter text-4xl"></i>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://instagram.com/join_finx" target="_blank" class="inline-flex items-center text-teal-700 hover:text-teal-900 font-bold">
+                    <span>Follow @join_finx</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="logo-container mb-4">
+                        <span class="text-2xl font-bold">Fin<span class="text-gold">X</span></span>
+                    </div>
+                    <p class="text-gray-300">Your gateway to smarter investing across traditional and alternative assets.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://instagram.com/join_finx" class="social-icon text-white hover:text-gold transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/finx" class="social-icon text-white hover:text-gold transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/join_finx" class="social-icon text-white hover:text-gold transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-300 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition duration-300">How It Works</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#waitlist" class="text-gray-300 hover:text-white transition duration-300">Join Waitlist</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Disclaimers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>info@finx.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>New York, NY</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-teal-800 text-center text-gray-300">
+                <p>&copy; 2025 FinX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                once: true,
+                duration: 800,
+                offset: 100
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Waitlist form submission
+            const waitlistForm = document.getElementById('waitlist-form');
+            const waitlistSuccess = document.getElementById('waitlist-success');
+            
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show success message
+                    if (waitlistSuccess) {
+                        waitlistSuccess.classList.remove('hidden');
+                        waitlistSuccess.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                    
+                    // Reset form
+                    waitlistForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

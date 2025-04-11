@@ -1,0 +1,202 @@
+.bg-teal-900 {
+    background-color: #005F69;
+}
+
+.text-teal-700 {
+    color: #007a8a;
+}
+
+.text-gold {
+    color: #FFD700;
+}
+
+.bg-gold {
+    background-color: #FFD700;
+}
+
+.bg-mint-light {
+    background-color: #E5F0F0;
+}
+
+.hover\:text-gold:hover {
+    color: #FFD700;
+}
+
+.hover\:bg-yellow-500:hover {
+    background-color: #EAC100;
+}
+
+.border-gold {
+    border-color: #FFD700;
+}
+
+/* Logo container styling */
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-container .logo-icon {
+    margin-right: 8px;
+}
+
+/* Animation for blob elements */
+@keyframes blob {
+    0% {
+        transform: scale(1) translate(0px, 0px);
+    }
+    33% {
+        transform: scale(1.1) translate(30px, -50px);
+    }
+    66% {
+        transform: scale(0.9) translate(-20px, 20px);
+    }
+    100% {
+        transform: scale(1) translate(0px, 0px);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #005F69;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #004a52;
+}
+
+/* Form styling */
+.form-error {
+    border: 2px solid #ff5252;
+}
+
+.error-message {
+    color: #ff5252;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Toast notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    background: white;
+    color: #333;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-width: 24rem;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.success {
+    border-left: 4px solid #10b981;
+}
+
+.toast.error {
+    border-left: 4px solid #ef4444;
+}
+
+/* Social icons */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Scroll progress bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #FFD700;
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Fix for iOS 100vh issue */
+:root {
+    --vh: 1vh;
+}
+
+.h-screen {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Active touch state for mobile */
+.active-touch {
+    opacity: 0.7;
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    display: inline-block;
+}
